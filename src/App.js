@@ -8,13 +8,15 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 
 import { Configuration, OpenAIApi } from "openai";
 
+require('dotenv').config();
+
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
   const configuration = new Configuration({
-    apiKey: "YOUR API KEY HERE",
+    apiKey: process.env.APIKEY,
   });
 
 
