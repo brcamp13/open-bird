@@ -8,7 +8,6 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 
 import { Configuration, OpenAIApi } from "openai";
 
-require('dotenv').config();
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +15,7 @@ function App() {
   const [response, setResponse] = useState("");
 
   const configuration = new Configuration({
-    apiKey: process.env.APIKEY,
+    apiKey: process.env.REACT_APP_APIKEY,
   });
 
 
@@ -59,7 +58,7 @@ function App() {
             <TextField
               fullWidth
               autoFocus
-              label="Your text"
+              label="Create a tweet that:"
               variant="outlined"
               multiline
               rows={4}
